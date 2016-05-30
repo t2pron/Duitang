@@ -4,22 +4,22 @@
               android:layout_width="match_parent"
               android:layout_height="match_parent"
               android:orientation="vertical"
-              tools:context=".MainActivity">
+              tools:context=".activity.MainActivity">
 
 
     <com.astuetz.PagerSlidingTabStrip
         android:id="@+id/indicator"
         android:layout_width="match_parent"
         android:layout_height="48dp"
-        android:background="#fff5f5f5"
+        android:background="@color/red"
         android:textSize="16sp"
         android:textColor="@drawable/selector_indicator_text_color"
         app:pstsShouldExpand="true"
         app:pstsIndicatorHeight="4dp"
-        app:pstsIndicatorColor="@color/red"
+        app:pstsIndicatorColor="@color/white"
         app:pstsUnderlineHeight="0dp"
-        app:pstsDividerColor="#fff5f5f5"
-        />
+        app:pstsDividerColor="@color/transparent"
+        android:fillViewport="false" />
 
 
     <android.support.v4.view.ViewPager
