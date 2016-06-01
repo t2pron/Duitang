@@ -12,7 +12,7 @@
         android:layout_height="210dp"
         />
 
-    <com.kay.duitang.ui.ClumsyIndicator
+    <com.t2porn.beautiful.ui.ClumsyIndicator
         android:id="@+id/indicator"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

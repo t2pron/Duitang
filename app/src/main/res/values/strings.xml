@@ -1,5 +1,8 @@
 <resources>
-    <string name="app_name">美女图片</string>
+    <string name="app_name">老司机</string>
     <string name="refresh_success">刷新成功</string>
-
+    <string name="refresh_down">向下刷新</string>
+    <string name="refresh_up">向上刷新</string>
+    <string name="refresh_release">松手刷新</string>
+    <string name="refresh_last">已经是最后一页了</string>
 </resources>

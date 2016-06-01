@@ -51,11 +51,11 @@
             android:background="@drawable/table_view_rectangle"
             android:scrollbars="none"
             >
-            <com.kay.duitang.ui.HorizontalTrendView
+            <com.t2porn.beautiful.ui.HorizontalTrendView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
-            </com.kay.duitang.ui.HorizontalTrendView>
+            </com.t2porn.beautiful.ui.HorizontalTrendView>
         </HorizontalScrollView>
 
         <include layout="@layout/category_layout"/>

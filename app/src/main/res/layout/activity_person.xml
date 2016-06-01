@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.kay.duitang.ui.ScrollNotifyView
+<com.t2porn.beautiful.ui.ScrollNotifyView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/scroll_view"
@@ -164,4 +164,4 @@
         </TableLayout>
 
     </LinearLayout>
-</com.kay.duitang.ui.ScrollNotifyView>
+</com.t2porn.beautiful.ui.ScrollNotifyView>
