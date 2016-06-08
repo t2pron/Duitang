@@ -19,24 +19,36 @@ public class FragmentAdapter extends FragmentStatePagerAdapter {
         super(fm);
     }
 
-    private String[] pageTitle = {"热门","发现","设置","流行"}; //发现 , "消息"
+    private String[] pageTitle = {"性感","韩日","丝袜","写真"}; //{"热门","发现","设置","流行"}; //发现 , "消息"
 
     @Override
     public Fragment getItem(int position) {
         switch (position) {
+            case 0:
+                return MoveFragment.newInstance(1, 1);
+            case 1:
+                return MoveFragment.newInstance(1, 2);
+            case 2:
+                return MoveFragment.newInstance(1, 3);
+            case 3:
+                return MoveFragment.newInstance(1, 5);
+            default:
+                return PagerFragment.newInstance(position + "");
+        }
+       /* switch (position) {
             case 0:
                 return new MoveFragment();
             case 1:
                 return new DiscoverFragment();
             case 2:
                 return new MsgFragment();
-          /*  case 2:
-                return new PopularFragment();*/
+          *//*  case 2:
+                return new PopularFragment();*//*
             case 3:
                 return new PopularFragment();
             default:
                 return PagerFragment.newInstance(position + "");
-        }
+        }*/
     }
 
     @Override

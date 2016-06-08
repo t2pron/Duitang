@@ -1,46 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.t2porn.beautiful">
-    <!--获取手机Mac地址，用作手机的唯一标识-->
-    <uses-permission android:name="android.permission.INTERNET"/>
+    package="com.t2porn.beautiful">
+
+    <!-- 获取手机Mac地址，用作手机的唯一标识 -->
+    <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
 
     <application
         android:name=".App"
         android:allowBackup="true"
-        android:icon="@mipmap/launchpad_icon"
-        android:supportsRtl="true"
+        android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
+        android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
         <activity
             android:name=".activity.MainActivity"
-            android:label="@string/app_name">
-
-        </activity>
-
-
+            android:label="@string/app_name"></activity>
         <activity
             android:name=".activity.WelcomeActivity"
             android:screenOrientation="portrait">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER"/>
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".activity.PersonActivity"
+            android:parentActivityName=".activity.MainActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/ActionBarOverlayTheme"
-            android:parentActivityName=".activity.MainActivity" >
+            android:theme="@style/ActionBarOverlayTheme">
+
             <!-- Parent activity meta-data to support API level 7+ -->
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".activity.MainActivity" />
         </activity>
-
+        <activity android:name=".activity.PhotoActivity"></activity>
     </application>
 
 </manifest>

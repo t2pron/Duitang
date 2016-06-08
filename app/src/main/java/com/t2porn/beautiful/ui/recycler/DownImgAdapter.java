@@ -1,5 +1,6 @@
 package com.t2porn.beautiful.ui.recycler;
 
+import android.content.Intent;
 import android.graphics.drawable.Animatable;
 import android.net.Uri;
 import android.support.v7.widget.CardView;
@@ -18,6 +19,7 @@ import com.facebook.drawee.view.SimpleDraweeView;
 import com.facebook.imagepipeline.image.ImageInfo;
 import com.facebook.imagepipeline.image.QualityInfo;
 import com.t2porn.beautiful.R;
+import com.t2porn.beautiful.activity.PhotoActivity;
 import com.t2porn.beautiful.bean.StaggerItem;
 
 import java.util.HashMap;
@@ -104,6 +106,14 @@ public class DownImgAdapter extends RecyclerView.Adapter<DownImgAdapter.MyViewHo
 //                Log.e("wg_log", "ID值=" + imageId );*/
             }
         });
+        holder.mSimpleDraweeView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(v.getContext(), PhotoActivity.class);
+                intent.putExtra("url" ,url);
+                v.getContext().startActivity(intent);
+            }
+        });
     }
 
     private float getTargetHeight(float width,float height,View view, String url){
@@ -118,14 +128,6 @@ public class DownImgAdapter extends RecyclerView.Adapter<DownImgAdapter.MyViewHo
         }
 
         FLog.i("kaede","child.getMeasuredWidth() = " + widthTarget);
-		/*int getWidth = child.getWidth();
-		int getMeasuredWidth = child.getMeasuredWidth();
-		int getLayoutParamsWidth = child.getLayoutParams().width;
-		if (getWidth==0||getMeasuredWidth==0||getLayoutParamsWidth==0){
-			FLog.i("kaede","child.getWidth() = " + getWidth);
-			FLog.i("kaede","child.getMeasuredWidth() = " + getMeasuredWidth);
-			FLog.i("kaede","child.getLayoutParams().width = " + getLayoutParamsWidth);
-		}*/
         return height * (widthTarget /width);
     }
 

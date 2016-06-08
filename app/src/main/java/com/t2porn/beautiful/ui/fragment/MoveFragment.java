@@ -57,12 +57,23 @@ public class MoveFragment extends Fragment implements SwipeRefreshLayout.OnRefre
 
     private static Handler handler;
 
-    public MoveFragment(int pageNumber ,int gallertclassID) {
-        this.pageNumber = pageNumber;
-        this.gallertclassID = gallertclassID;
+    public static MoveFragment newInstance(int pageNumber ,int gallertclassID) {
+        MoveFragment newFragment = new MoveFragment();
+        Bundle bundle = new Bundle();
+        bundle.putInt("pageNumber", pageNumber);
+        bundle.putInt("gallertclassID", gallertclassID);
+        newFragment.setArguments(bundle);
+        return newFragment;
     }
 
+    public void getArgumentsType() {
+        pageNumber = getArguments().getInt("pageNumber", 1);
+        gallertclassID = getArguments().getInt("gallertclassID", 1);
+    }
+
+
     public MoveFragment() {
+
     }
 
     @Nullable
@@ -70,6 +81,9 @@ public class MoveFragment extends Fragment implements SwipeRefreshLayout.OnRefre
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_stagger, container, false);
         ButterKnife.inject(this, view);
+        //pageNumber = savedInstanceState.getInt("pageNumber");
+        //gallertclassID=savedInstanceState.getInt("gallertclassID");
+        getArgumentsType();
         handler = new Handler();
         initView();
         mContent = getActivity();
@@ -94,6 +108,9 @@ public class MoveFragment extends Fragment implements SwipeRefreshLayout.OnRefre
                 new Thread(new RefreshRunnable(false)).start();
             }
         });
+
+
+
         //mStaggeredGridView.setAdapter(new StaggerItemAdapter(getActivity(), true));
  /*       mSwipeRefreshLayout.setColorSchemeResources(R.color.blue);
         mSwipeRefreshLayout.setOnRefreshListener(this);*/
